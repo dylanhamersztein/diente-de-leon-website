@@ -1,0 +1,244 @@
+$nav-width: 10vw;
+
+$title-font: 'Ubuntu', sans-serif;
+$text-font: 'Ubuntu Condensed', sans-serif;
+
+$bg-colour: #ece2d0;
+$text-colour-dark: #2e3738;
+$text-colour-light: #536365;
+$text-colour-lighter: #84989a;
+
+$text-section-padding-height: 10vh;
+$text-section-padding-width: 10vw;
+$text-section-padding-mobile: 5vh;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/*  ----------------- FONTS ----------------- */
+* {
+  font-family: $text-font;
+  color: $text-colour-dark;
+}
+
+h1, h2, h3 {
+  font-family: $title-font;
+}
+
+h2 {
+  color: $text-colour-light;
+}
+
+h3 {
+  color: $text-colour-lighter
+}
+
+
+li {
+  list-style-type: none;
+  margin: 0.2vh 0;
+
+  @media screen and (max-width: 768px) {
+    list-style-type: square
+  }
+}
+
+/*  ----------------- COMMON ----------------- */
+.site-wrapper {
+  background-color: $bg-colour;
+  display: flex;
+}
+
+.about, .experience, .education {
+  flex-direction: column;
+  padding: $text-section-padding-height $text-section-padding-width;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: space-between;
+  min-width: inherit;
+
+  & > * {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+.divider {
+  margin: 8vh auto;
+  min-width: 35%;
+  max-width: 50%;
+  border-top: 1px solid $text-colour-lighter;
+}
+
+.left-align {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  & > * {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  & > *:not(:first-child) {
+    margin-top: 1vh;
+  }
+
+  @media screen and (max-width: 768px) {
+    & > * {
+      margin-top: 1.5vh;
+    }
+  }
+}
+
+.right-align {
+  @extend .left-align;
+
+  @media screen and (min-width: 768px) {
+    align-items: end;
+
+    & > p {
+      text-align: end;
+    }
+  }
+}
+
+/*  ----------------- NAVIGATION PANE ----------------- */
+.side-nav-bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+
+  position: fixed;
+  left: 0;
+  width: $nav-width;
+  min-height: 100%;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.icon-link {
+  color: $text-colour-dark;
+  cursor: pointer;
+  transform: scale(2);
+
+  &:hover {
+    animation: expand_icon_button 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes expand_icon_button {
+  100% {
+    transform: scale(2.5);
+  }
+}
+
+/*  ----------------- CONTENT ----------------- */
+.content {
+  margin-left: $nav-width;
+  height: inherit;
+  width: inherit;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+
+/*  ----------------- SECTION ----------------- */
+.section {
+  height: 100vh;
+  width: inherit;
+
+  display: flex;
+  justify-content: space-evenly;
+
+  box-sizing: border-box;
+
+  @media screen and (max-width: 768px) {
+    height: fit-content;
+    flex-direction: column;
+  }
+}
+
+/*  ----------------- HOME PAGE ----------------- */
+.home {
+  align-items: center;
+  height: 100vh;
+
+  &-content {
+    min-width: 40vw;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  &-text-content {
+    width: fit-content;
+
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  /* HACK */
+  &-link:first-child {
+    transform: translateX(3px) translateY(-3px);
+  }
+
+  /* HACK */
+  &-link:last-child {
+    transform: translateX(-6px) translateY(-2px);
+  }
+}
+
+.profile-picture {
+  width: 300px;
+  height: 300px;
+  border-radius: 50px;
+}
+
+/*  ----------------- ABOUT PAGE ----------------- */
+.about {
+  justify-content: flex-start;
+
+  & > p:last-of-type {
+    margin-bottom: 8vh;
+  }
+}
+
+.about-icon-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > * {
+    margin: auto;
+    transform: scale(3);
+  }
+}
+
+/*  ----------------- EXPERIENCE PAGE ----------------- */
+.experience {
+  & > h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/*  ----------------- EDUCATION PAGE ----------------- */
+.education {
+}
