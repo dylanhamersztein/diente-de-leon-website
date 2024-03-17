@@ -11,10 +11,10 @@
     "lint": "prettier --write --cache index.html css/*"
   },
   "devDependencies": {
-    "@parcel/packager-raw-url": "^2.7.0",
-    "@parcel/transformer-sass": "^2.7.0",
-    "@parcel/transformer-webmanifest": "^2.7.0",
-    "parcel": "^2.7.0",
+    "@parcel/packager-raw-url": "^2.12.0",
+    "@parcel/transformer-sass": "^2.12.0",
+    "@parcel/transformer-webmanifest": "^2.12.0",
+    "parcel": "^2.12.0",
     "prettier": "^3.2.5"
   }
 }
