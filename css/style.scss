@@ -1,7 +1,7 @@
 $nav-width: 10vw;
 
-$title-font: 'Ubuntu', sans-serif;
-$text-font: 'Ubuntu Condensed', sans-serif;
+$title-font: "Ubuntu", sans-serif;
+$text-font: "Ubuntu Condensed", sans-serif;
 
 $bg-colour: #ece2d0;
 $text-colour-dark: #2e3738;
@@ -16,7 +16,8 @@ html {
   scroll-behavior: smooth;
 }
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
 }
@@ -27,7 +28,9 @@ body, html {
   color: $text-colour-dark;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: $title-font;
 }
 
@@ -36,7 +39,7 @@ h2 {
 }
 
 h3 {
-  color: $text-colour-lighter
+  color: $text-colour-lighter;
 }
 
 li {
@@ -44,7 +47,7 @@ li {
   margin: 0.2vh 0;
 
   @media screen and (max-width: 768px) {
-    list-style-type: square
+    list-style-type: square;
   }
 }
 
@@ -54,7 +57,9 @@ li {
   display: flex;
 }
 
-.about, .experience, .education {
+.about,
+.experience,
+.education {
   flex-direction: column;
   padding: $text-section-padding-height $text-section-padding-width;
 }
@@ -128,21 +133,36 @@ li {
   }
 }
 
-.icon-link {
-  color: $text-colour-dark;
-  cursor: pointer;
-  transform: scale(2);
+.link-wrapper {
+  display: grid;
+  align-items: center;
+  justify-items: center;
 
-  &:hover {
-    animation: expand_icon_button 0.3s ease-in-out;
-    animation-fill-mode: forwards;
+  &:hover > .icon-link {
+    transform: scale(2.5);
+    transition: transform 0.3s;
+  }
+
+  &:hover > .link-description {
+    opacity: 100%;
+    transition: opacity 0.3s;
   }
 }
 
-@keyframes expand_icon_button {
-  100% {
-    transform: scale(2.5);
-  }
+.icon-link {
+  color: $text-colour-dark;
+  cursor: pointer;
+
+  transform: scale(2);
+  transition: transform 0.3s;
+}
+
+.link-description {
+  margin: 0;
+  margin-top: 5px;
+
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 /*  ----------------- CONTENT ----------------- */

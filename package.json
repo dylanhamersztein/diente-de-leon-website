@@ -7,12 +7,14 @@
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
-    "start": "npm run build && npm run dev"
+    "start": "npm run build && npm run dev",
+    "lint": "prettier --write --cache index.html css/*"
   },
   "devDependencies": {
     "@parcel/packager-raw-url": "^2.7.0",
     "@parcel/transformer-sass": "^2.7.0",
     "@parcel/transformer-webmanifest": "^2.7.0",
-    "parcel": "^2.7.0"
+    "parcel": "^2.7.0",
+    "prettier": "^3.2.5"
   }
 }
